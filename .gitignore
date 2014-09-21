@@ -1,0 +1,20 @@
+# images etc
+*.jpg
+*.jpeg
+*.gif
+*.png
+*.psd
+*.ai
+*.svg
+
+# meta info
+*.txt
+*.ru
+
+# Mac standard bs
+.DS_Store
+.Trashes
+
+
+# Dugway
+.sass-cache/*
