@@ -1,0 +1,34 @@
+/* ------------------------------------------------------------------------------------------------
+ *
+ * This is where all of the CSS code is handled for your theme.
+ * [... irrelevant ]
+ * However, if you're just a glutton for punishment,
+ * you could simply put all of your CSS in this file. It's up to you.
+ *
+ * ------------------------------------------------------------------------------------------------
+ */
+
+
+/* @group GENERAL */
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+}
+
+a, a:link, a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+a img, a:link img, a:visited img {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+	background: none;
+}
+
+#page {
+	margin: 0px;
+}
+
+/* @end */
