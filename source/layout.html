@@ -8,7 +8,8 @@
     <meta name="keywords" content="{{ page.meta_keywords }}">
 
     <link href="{{ theme | theme_css_url }}" media="screen" rel="stylesheet" type="text/css">
-
+	<script src="//use.typekit.net/tqh1fbh.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
     <script src="{{ theme | theme_js_url }}" type="text/javascript"></script>
 
@@ -16,87 +17,105 @@
   </head>
 
   <body id="{{ page.permalink }}" class="{{ page.category }}">
-    <header>
-      <a href="/" title="{{ store.name | escape }}">
-        {% if theme.logo != blank %}
-        <img src="{{ theme.logo.url }}" alt="{{ store.name }}">
-        {% else %}
-        {{ store.name }}
-        {% endif %}
-      </a>
-    </header>
+  	<wrap>
+  		<div id="logo">
+  			<img src="{{ 'mobel-logo.png' | theme_image_url }}" alt="" />
+  		</div>
+  		<page>
+  			<div id="header">
+  				<a href="/" title="{{ store.name | escape }}">
+  				  <img src="{{ 'mobel-top-1.png' | theme_image_url }}" alt="">
+  				  <img src="{{ 'mobel-top-2.png' | theme_image_url }}" alt="">
+  				</a>
+  			</div>
+  			
+  			<div id="header-bottom">
+  				<div class="col">
+  					Een project van <a href="http://">HEIMAT</a> &amp; <a href="http://">Resourcelab</a>
+  				</div>
+  				<div class="col">
+  					Met de steun van <a href="http://">Design Vlaanderen</a>
+  				</div>
+  				<div class="col">
+  				
+  				</div>
+  				<div class="col">
+  					 SHOP &darr;
+  				</div>
+  			</div>
+  			
+			<main>
+				<aside>
+					<nav>
+						<ul class="unstyled">
+							{% for page in pages.all %}
+								<li>{{ page | link_to }}</li>
+							{% endfor %}
+								<li><a href="/contact">Contact</a></li>
+							{% if store.website != blank %}
+								<li><a href="{{ store.website }}">Back to Site</a></li>
+							{% endif %}
+						</ul>
+						
+						<!--
+						<ul class="unstyled">
+							{% for product in products.all %}
+								<a href="{{ product.url }}">
+									<li>{{ product.name }}</li>
+								</a>
+							{% endfor %}
+						</ul>
+						-->
+						
+						{% if artists.active != blank %}
+							<ul class="unstyled">
+							{% for artist in artists.active %}
+								<li class="artist">{{ artist | link_to }}</li>
+							{% endfor %}
+							</ul>
+						{% endif %}
+						
+					
+					</nav>
+			
+			        <div>
+			          <a href="/cart">Cart  {{ cart.total | money_with_sign }}</a>
+			        </div>
+				</aside>
+			
+				<content>
+					{% if page.name != 'Home' %}
+						<h3>{{ page.name }}</h3>
+					{% endif %}
+					{% if errors != blank %}
+						<ul class="unstyled errors">
+						{% for error in errors %}
+						<li>{{ error }}</li>
+						{% endfor %}
+						</ul>
+					{% endif %}
+					
+					{% if page.category == 'custom' %}
+						{{ page_content | paragraphs }}
+					{% else %}
+						{{ page_content }}
+					{% endif %}
+				</content>
+  			</main>
+  			
+  			<footer>
+  			  {% if theme.twitter_username != blank %}
+  			  <p><a href="http://twitter/{{ theme.twitter_username }}">Follow @{{ theme.twitter_username }}</a></p>
+  			  {% endif %}
+  			</footer>
+  		</page>
+  		
+  		
+  	</wrap>
+  	
+   
+	
 
-    <div class="wrap">
-      <aside>
-        <section>
-          <a href="/cart">Cart ({{ cart.total | money_with_sign }})</a>
-        </section>
-
-        {% if theme.show_search %}
-        <section>
-          <form action="/products" method="get">
-            <label>Search: <input type="text" name="search"></label>
-          </form>
-        </section>
-        {% endif %}
-
-        <nav>
-          <h3>Products</h3>
-          <ul class="unstyled">
-            <li><a href="/products">All</a></li>
-            {% for category in categories.active %}
-            <li>{{ category | link_to }}</li>
-            {% endfor %}
-          </ul>
-
-          {% if artists.active != blank %}
-          <h3>Artists</h3>
-          <ul class="unstyled">
-            <li><a href="/products">All</a></li>
-            {% for artist in artists.active %}
-            <li>{{ artist | link_to }}</li>
-            {% endfor %}
-          </ul>
-          {% endif %}
-
-          <h3>Info</h3>
-          <ul class="unstyled">
-            {% for page in pages.all %}
-            <li>{{ page | link_to }}</li>
-            {% endfor %}
-            <li><a href="/contact">Contact Us</a></li>
-            {% if store.website != blank %}
-            <li><a href="{{ store.website }}">Back to Site</a></li>
-            {% endif %}
-          </ul>
-        </nav>
-
-        <cite>{{ bigcartel_credit }}</cite>
-      </aside>
-
-      <section class="content">
-        <h1>{{ page.name }}</h1>
-
-        {% if errors != blank %}
-        <ul class="unstyled errors">
-          {% for error in errors %}
-          <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-
-        {% if page.category == 'custom' %}
-          {{ page_content | paragraphs }}
-        {% else %}
-          {{ page_content }}
-        {% endif %}
-      </section>
-    </div>
-
-    <footer>
-      {% if theme.twitter_username != blank %}
-      <p><a href="http://twitter/{{ theme.twitter_username }}">Follow @{{ theme.twitter_username }}</a></p>
-      {% endif %}
-    </footer>
+   
   </body>
 </html>

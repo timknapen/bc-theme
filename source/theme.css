@@ -1,0 +1,140 @@
+/* ------------------------------------------------------------------------------------------------
+ *
+ * This is where all of the CSS code is handled for your theme.
+ * [... irrelevant ]
+ * However, if you're just a glutton for punishment,
+ * you could simply put all of your CSS in this file. It's up to you.
+ *
+ * ------------------------------------------------------------------------------------------------
+ */
+
+
+/* @group GENERAL */
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+	font: 20px ff-super-grotesk-web, SuperGroteskA, sans-serif;
+	font-style: normal;
+	font-weight: 200;
+	background: #ffc;
+}
+
+a, a:link, a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+a img, a:link img, a:visited img {
+	padding: 0px;
+	margin: 0px;
+/*	border: inherit;*/
+	background: none;
+}
+
+wrap{
+	display: block;
+	margin: 35px auto;
+	max-width: 1200px;
+}
+
+#logo{
+	position: fixed;
+	z-index: 1;
+	top: 0px;
+/*	margin-left: -30px;*/
+	margin-left: 10px;
+	margin-top: 35px;
+	width: 30px;
+}
+
+page{
+	display: block;
+	z-index: 2;
+	margin-left: 70px;
+}
+
+#header{
+	width: 100%;
+	height: auto;
+	display: table;
+}
+
+#header{
+	text-align: left;
+}
+#header #masthead img{
+	height: 100%;
+}
+#header-bottom{
+	width: 100%;
+	display: table;
+	font-size: 20px;
+	margin: 30px 0px 50px;
+	box-sizing: border-box;
+}
+#header-bottom .col{
+	display: table-cell;
+	width: 25%;
+}
+
+main{
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	min-height: 100%;
+}
+aside{
+	display: table-cell;
+	vertical-align: top;
+	width: 20%;
+/*	background-color: rgba(104, 245, 56, 0.56);*/
+}
+
+content{
+	display: table-cell;
+	vertical-align: top;
+	width: 80%;
+/*	background: rgba(49, 171, 255, 0.45);*/
+}
+
+li{
+	list-style: none;
+	text-indent: 0;
+	margin: 0px;
+}
+li.artist{
+	margin-bottom: 20px;
+}
+nav ul{
+	padding: 0px;
+	margin-bottom: 50px;
+}
+
+aside nav{
+	margin-bottom: 50px;
+}
+
+.product{
+	width: 50%;
+	float: left;
+	clear: none;
+	height: 500px;
+	text-align: center;
+}
+
+.product img{
+	border: 2px solid #000;
+	max-height: 400px;
+}
+.product .title{
+	text-align: left;
+	width: 75%;
+}
+
+.pagination{
+	float: none;
+	clear: both;
+	width: 100%;
+}
+
+/* @end */
