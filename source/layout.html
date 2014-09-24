@@ -60,7 +60,7 @@
 							{% endfor %}
 								
 							{% if store.website != blank %}
-								<li><a href="{{ store.website }}">Back to Site</a></li>
+								<li><a href="{{ store.website }}">Terug naar de website</a></li>
 							{% endif %}
 						</ul>
 						
@@ -86,8 +86,12 @@
 					</nav>
 			
 			        <div>
-			          <a href="/cart">Cart  {{ cart.total | money_with_sign }}</a>
+			          <a href="/cart">
+			          	Winkelmandje<br />
+			          	{{ cart.total | money_with_sign }}
+			          </a>
 			        </div>
+			        
 				</aside>
 			
 				<content>
