@@ -15,7 +15,9 @@
     {% case product.status %}
 
       {% when 'sold-out' %}
-        <h5>{{ product.default_price | money_with_sign }} <em>Sold Out</em></h5>
+        <h5>
+        	<em>Sold Out</em>
+        </h5>
 
       {% when 'coming-soon' %}
         <h5>{{ product.default_price | money_with_sign }} <em>Coming Soon</em></h5>

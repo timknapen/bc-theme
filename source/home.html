@@ -1,13 +1,20 @@
+<!-- H O M E -->
 {% if products.all != blank %}
 	{% for product in products.all %}
 		<div class="product">
 			<a href="{{ product.url }}">
-				<p class="title">
+				<div class="title">
+					{% for artist in product.artists %}
+						{{ artist.name }}
+					{% endfor %}
+					{% if product.artists != blank %}
+						— 
+					{% endif %}
 					{{ product.name }}
-				</p>
-				<p>
+				</div>
+				<div>
 					<img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url size: theme.product_image_size }}">
-				</p>
+				</div>
 			<!--          <i>{{ product.default_price | money_with_sign }}</i>-->
 			{% if product.on_sale %}
 			<em>On Sale</em>

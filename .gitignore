@@ -18,3 +18,5 @@
 
 # Dugway
 .sass-cache/*
+build/*
+source/javascripts/*
