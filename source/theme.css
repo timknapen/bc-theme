@@ -167,6 +167,11 @@ aside nav{
 	width: 100%;
 }
 
+.maintenance{
+	margin: 20px;
+	text-align: center;
+}
+
 /* @end */
 
 /* @group Product */
