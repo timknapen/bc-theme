@@ -6,29 +6,31 @@
     <meta charset="utf-8">
     <meta name="description" content="{{ page.meta_description }}">
     <meta name="keywords" content="{{ page.meta_keywords }}">
-
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	
     <link href="{{ theme | theme_css_url }}" media="screen" rel="stylesheet" type="text/css">
 	<script src="//use.typekit.net/tqh1fbh.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
 <!--    <script src="{{ jquery | theme_js_url }}" type="text/javascript"></script>-->
-<!--    <script src="{{ theme | theme_js_url }}" type="text/javascript"></script>-->
+    <script src="{{ theme | theme_js_url }}" type="text/javascript"></script>
     <script src="http://www.indianen.be/mobel/javascripts/jquery.scrollTo.min.js"></script>
-	<script src="http://www.indianen.be/mobel/javascripts/main.js"></script>
+<!--	<script src="http://www.indianen.be/mobel/javascripts/main.js"></script>-->
     {{ head_content }}
   </head>
 
   <body id="{{ page.permalink }}" class="{{ page.category }}">
   	<wrap>
   		<div id="logo">
-  			<!-- <img src="{{ 'mobel-logo.png' | theme_image_url }}" alt="" /> -->
-  			<img src="http://www.indianen.be/mobel/assets/mobel-logo.png" alt="" />
+  			<a href="/">
+  				<img src="http://www.indianen.be/mobel/assets/mobel-logo.png" alt="" />
+  			</a>
   		</div>
   		<page>
+  			
+  			{% if page.name == 'Home' %}
   			<div id="header">
 				<a href="/" title="{{ store.name | escape }}">
-				<!-- <img src="{{ 'mobel-top-1.png' | theme_image_url }}" alt=""> -->
-				<!-- <img src="{{ 'mobel-top-2.png' | theme_image_url }}" alt=""> -->
 				<img src="http://www.indianen.be/mobel/assets/mobel-top-1.png" alt="" />
 				<img src="http://www.indianen.be/mobel/assets/mobel-top-2.png" alt="" />
 				</a>
@@ -43,21 +45,26 @@
   					Met de steun van <a href="http://www.designvlaanderen.be/">Design Vlaanderen</a>
   				</div>
   				<div class="col">
-  					<a href="/contact">Contact</a>
-  				</div>
+  					  				</div>
   				<div class="col">
   					 <a href="#shop" class="scrolllink"> SHOP &darr;</a>
   				</div>
   			</div>
+  			{% endif %}
   			
   			<a name="shop" id="shop"> </a>
 			<main>
 				<aside>
+					<div id="aside-close">
+						&times;
+					</div>
 					<nav>
 						<ul class="unstyled">
 							{% for page in pages.all %}
 								<li>{{ page | link_to }}</li>
 							{% endfor %}
+								<li><a href="/contact">Contact</a></li>
+								
 								
 							{% if store.website != blank %}
 								<li><a href="{{ store.website }}">Terug naar de website</a></li>
@@ -92,12 +99,10 @@
 			          </a>
 			        </div>
 			        
+			        
 				</aside>
 			
 				<content>
-					{% if page.name != 'Home' %}
-						<h3>{{ page.name }}</h3>
-					{% endif %}
 					{% if errors != blank %}
 						<ul class="unstyled errors">
 						{% for error in errors %}

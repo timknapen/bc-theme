@@ -30,6 +30,10 @@
 	
 {% else %}
 	
+		{% if page.name != 'Home' %}
+			<h3>{{ page.name }}</h3>
+		{% endif %}
+	
 	<ul class="unstyled">
 		{% for product in products.current %}
 			<li class="{{ product.css_class }}">

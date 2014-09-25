@@ -8,5 +8,5 @@
 //
 // ------------------------------------------------------------------------------------------------
 
-//= require javascripts/jquery.scrollTo.min.js
+//  require javascripts/jquery.scrollTo.min.js
 //= require javascripts/main
