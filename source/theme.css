@@ -183,6 +183,22 @@ aside nav{
 
 /* @end */
 
+/* @group Contact */
+
+content input, content textarea{
+	width:50%;
+	display: block;
+	margin-bottom: 20px;
+	font-size: inherit;
+	/*line-height: 1.2em;*/
+}
+content textarea{
+	height: 3em;
+}
+
+
+/* @end */
+
 /* @group Mobile */
 @media screen and (max-device-width: 480px), screen and (max-width: 900px){
 	/* one collumn */
