@@ -1,3 +1,6 @@
+ {% comment %}
+ 	YO
+ {% endcomment %}
  <!-- PRODUCTS -->
  {% if artists.active == blank %}
 	{% if products.all != blank %}
@@ -31,7 +34,7 @@
 {% else %}
 	
 		{% if page.name != 'Home' %}
-			<h3>{{ page.name }}</h3>
+			<h3 class="artist-name">{{ page.name }}</h3>
 		{% endif %}
 	
 	<ul class="unstyled">
@@ -39,12 +42,14 @@
 			<li class="{{ product.css_class }}">
 				<a href="{{ product.url }}">
 					<div class="title">
+						<!--
 						{% for artist in product.artists %}
 							{{ artist.name }}
 						{% endfor %}
 						{% if product.artists != blank %}
 							— 
 						{% endif %}
+						-->
 						{{ product.name }}
 					</div>
 					<div>

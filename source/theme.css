@@ -31,7 +31,7 @@ a img, a:link img, a:visited img {
 
 wrap{
 	display: block;
-	margin: 35px auto;
+	margin: 0px auto;
 	max-width: 1200px;
 }
 
@@ -44,11 +44,13 @@ page{
 h1, h2, h3, h4{
 	margin-top: 0px;
 }
+
 /* @end */
 
 /* @group Header */
 
 #header{
+	margin-top: 35px;
 	width: 100%;
 	height: auto;
 	display: table;
