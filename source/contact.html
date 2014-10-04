@@ -5,33 +5,31 @@
 {% else %}
 
 <form method="post" action="/contact">
-  <ul class="unstyled">
-    <li>
+    <div>
       <label for="name">Naam</label>
       {{ contact | contact_input: 'name' }}
-    </li>
-    <li>
+    </div>
+    <div>
       <label for="email">Email</label>
       {{ contact | contact_input: 'email' }}
-    </li>
-    <li>
+    </div>
+    <div>
       <label for="subject">Onderwerp</label>
       {{ contact | contact_input: 'subject' }}
-    </li>
-    <li>
+    </div>
+    <div>
       <label for="message">Bericht</label>
       {{ contact | contact_input: 'message' }}
-    </li>
-    <li>
+    </div>
+    <div>
       <label for="captcha">Spam beveiliging</label>
-      <p>Vul de letters uit de print in</p>
+      <p>Vul de letters uit de prent in</p>
       <div>{{ contact.captcha }}</div>
       {{ contact | contact_input: 'captcha' }}
-    </li>
-    <li>
+    </div>
+    <div>
       <button type="submit" name="submit" title="Stuur ons een email">Verzenden</button>
-    </li>
-  </ul>
+    </div>
 </form>
 
 {% endif %}

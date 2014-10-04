@@ -17,8 +17,16 @@
 				</div>
 			<!--          <i>{{ product.default_price | money_with_sign }}</i>-->
 			{% if product.on_sale %}
-			<em>On Sale</em>
+				<em>On Sale</em>
 			{% endif %}
+			
+			{% case product.status %}
+				{% when 'sold-out' %}
+					<em>Uitverkocht</em>
+				{% when 'coming-soon' %}
+					<em>coming soon</em>
+			{% endcase %}
+			
 			</a>
 		</div>
 	{% endfor %}

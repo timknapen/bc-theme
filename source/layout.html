@@ -13,30 +13,28 @@
 	<script>try{Typekit.load();}catch(e){}</script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
 <!--    <script src="{{ jquery | theme_js_url }}" type="text/javascript"></script>-->
-<!--    <script src="{{ theme | theme_js_url }}" type="text/javascript"></script>-->
-    <script src="http://www.indianen.be/mobel/javascripts/jquery.scrollTo.min.js"></script>
-	<script src="http://www.indianen.be/mobel/javascripts/main.js"></script>
+    <script src="http://www.indianen.be/mobel/bc-theme/source/javascripts/jquery.scrollTo.min.js"></script>
+	<script src="http://www.indianen.be/mobel/bc-theme/source/javascripts/main.js"></script>    
+<!--	<script src="{{ theme | theme_js_url }}" type="text/javascript"></script>-->
+	<script src="{{ 'api' | theme_js_url }}"></script>
+
     {{ head_content }}
   </head>
 
-  <body id="{{ page.permalink }}" class="{{ page.category }}">
+  <body id="{{ page.permalink }}" class="{{ page.category }}">	
   	<wrap>
   		<div id="logo">
   			<a href="/">
-  				<img src="http://www.indianen.be/mobel/assets/mobel-logo.png" alt="" />
+  				<img src="http://www.indianen.be/mobel/bc-theme/source/images/mobel-logo.png" alt="" />
   			</a>
   		</div>
   		<page>
   			
   			{% if page.name == 'Home' %}
   			<div id="header">
-				<a href="/" title="{{ store.name | escape }}">
-				<!--
-				<img src="http://www.indianen.be/mobel/assets/mobel-top-1.png" alt="" />
-				<img src="http://www.indianen.be/mobel/assets/mobel-top-2.png" alt="" />
-				-->
-				<img src="{{ 'mobel-top-1.png' | theme_image_url }}" alt="" />
-				<img src="{{ 'mobel-top-2.png' | theme_image_url }}" alt="" />
+				<a href="#shop" class="scrolllink">
+				<img src="http://www.indianen.be/mobel/bc-theme/source/images/mobel-top-1.png" alt="" />
+				<img src="http://www.indianen.be/mobel/bc-theme/source/images/mobel-top-2.png" alt="" />
 				</a>
   			</div>
   			
@@ -95,14 +93,14 @@
 						
 					
 					</nav>
-			
+					{% if cart.item_count > 0 %}
 			        <div>
 			          <a href="/cart">
 			          	Winkelmandje<br />
 			          	{{ cart.total | money_with_sign }}
 			          </a>
 			        </div>
-			        
+			        {% endif %}
 			        
 				</aside>
 			
